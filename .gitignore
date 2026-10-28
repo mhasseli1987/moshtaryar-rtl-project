@@ -1,0 +1,3 @@
+tools/geoBoundaries-*.json
+tools/.zcode/
+node_modules/

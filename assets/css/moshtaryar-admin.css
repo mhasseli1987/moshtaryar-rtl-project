@@ -1,0 +1,564 @@
+/**
+ * استایل صفحات پیشخوان مشتریار — راست‌چین از مبنا.
+ * رنگ‌ها هم‌سو با اسکیم پیش‌فرض ادمین وردپرس؛ فونت پیش‌فرض سیستمی وردپرس، بدون فونت/CDN بیرونی.
+ */
+
+.moshtaryar-wrap {
+	direction: rtl;
+	text-align: right;
+	font-family: Tahoma, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+	color: #1d2327;
+
+	--my-border: #c3c4c7;
+	--my-border-light: #dcdcde;
+	--my-muted: #50575e;
+	--my-faint: #787c82;
+	--my-primary: #2271b1;
+	--my-primary-dark: #135e96;
+	--my-surface: #ffffff;
+	--my-wash: #f6f7f7;
+}
+
+/* ---------- سربرگ صفحه ---------- */
+
+.moshtaryar-title {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-size: 21px;
+	font-weight: 700;
+	line-height: 1.5;
+	margin: 12px 0 4px;
+}
+
+/* نشان کوچک برند کنار عنوان */
+.moshtaryar-title::before {
+	content: "";
+	width: 10px;
+	height: 10px;
+	border-radius: 3px;
+	background: var(--my-primary);
+	flex: none;
+}
+
+.moshtaryar-subtitle {
+	color: var(--my-muted);
+	font-size: 12.5px;
+	margin: 0;
+}
+
+.moshtaryar-page-head {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 16px;
+	flex-wrap: wrap;
+	margin-bottom: 8px;
+}
+
+.moshtaryar-btn-recalc {
+	border-radius: 4px;
+}
+
+/* ---------- کارت‌های KPI ---------- */
+
+.moshtaryar-kpis {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 16px;
+	margin-top: 16px;
+}
+
+.moshtaryar-kpi {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	padding: 16px 18px 14px;
+	background: var(--my-surface);
+	border: 1px solid var(--my-border);
+	border-radius: 6px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+	overflow: hidden;
+}
+
+/* نوار رنگی لبهٔ راست هر کارت */
+.moshtaryar-kpi::before {
+	content: "";
+	position: absolute;
+	inset-inline-start: 0;
+	top: 0;
+	bottom: 0;
+	width: 3px;
+	background: var(--my-accent, var(--my-primary));
+}
+
+.moshtaryar-kpi--total  { --my-accent: #2271b1; }
+.moshtaryar-kpi--active { --my-accent: #00a32a; }
+.moshtaryar-kpi--avg    { --my-accent: #7f54b3; }
+.moshtaryar-kpi--repeat { --my-accent: #f59e0b; }
+
+.moshtaryar-kpi__icon {
+	color: var(--my-accent);
+	opacity: 0.85;
+	margin-bottom: 6px;
+}
+
+.moshtaryar-kpi__icon svg {
+	width: 22px;
+	height: 22px;
+	display: block;
+}
+
+.moshtaryar-kpi__value {
+	font-size: 23px;
+	font-weight: 700;
+	line-height: 1.4;
+}
+
+.moshtaryar-kpi__label {
+	font-size: 12px;
+	color: var(--my-muted);
+}
+
+/* ---------- کارت‌های نمودار ---------- */
+
+.moshtaryar-charts {
+	display: grid;
+	grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+	gap: 16px;
+	margin-top: 16px;
+	align-items: stretch;
+}
+
+.moshtaryar-card {
+	background: var(--my-surface);
+	border: 1px solid var(--my-border);
+	border-radius: 6px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+	padding: 16px 18px 18px;
+}
+
+.moshtaryar-card__title {
+	font-size: 14px;
+	font-weight: 700;
+	margin: 0 0 14px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid var(--my-border-light);
+}
+
+/* ---------- نمودار دونات ---------- */
+
+.moshtaryar-donut-layout {
+	display: flex;
+	align-items: center;
+	gap: 22px;
+	flex-wrap: wrap;
+}
+
+.moshtaryar-donut-box {
+	position: relative;
+	width: 200px;
+	flex: none;
+	margin-inline: auto;
+}
+
+.moshtaryar-donut-svg {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.moshtaryar-donut-svg circle {
+	transition: stroke-dasharray 0.9s cubic-bezier(0.25, 0.6, 0.3, 1), opacity 0.2s ease;
+}
+
+.moshtaryar-donut-svg circle.is-dim {
+	opacity: 0.28;
+}
+
+.moshtaryar-donut-center {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 2px;
+	pointer-events: none;
+	text-align: center;
+}
+
+.moshtaryar-donut-total {
+	font-size: 26px;
+	font-weight: 700;
+	line-height: 1.2;
+}
+
+.moshtaryar-donut-total-label {
+	font-size: 11.5px;
+	color: var(--my-muted);
+}
+
+.moshtaryar-legend {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	flex: 1;
+	min-width: 200px;
+}
+
+.moshtaryar-legend__item {
+	display: grid;
+	grid-template-columns: 12px 1fr auto auto;
+	align-items: center;
+	gap: 8px;
+	padding: 5px 8px;
+	border-radius: 4px;
+	transition: background 0.15s ease;
+}
+
+.moshtaryar-legend__item.is-active {
+	background: var(--my-wash);
+}
+
+.moshtaryar-legend__label {
+	font-size: 12.5px;
+}
+
+.moshtaryar-legend__count {
+	font-size: 12.5px;
+	font-weight: 700;
+}
+
+.moshtaryar-legend__pct {
+	font-size: 11.5px;
+	color: var(--my-faint);
+	min-width: 46px;
+	text-align: left;
+}
+
+.moshtaryar-badge__dot {
+	width: 9px;
+	height: 9px;
+	border-radius: 50%;
+	display: inline-block;
+	flex: none;
+}
+
+/* ---------- نمودار میله‌ای ---------- */
+
+.moshtaryar-bars-box {
+	position: relative;
+}
+
+.moshtaryar-bars-svg {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+/* جهت درست متن‌های فارسی داخل SVG */
+.moshtaryar-bars-svg text {
+	direction: rtl;
+	unicode-bidi: plaintext;
+	font-family: inherit;
+	user-select: none;
+}
+
+.moshtaryar-grid {
+	stroke: #f0f0f1;
+	stroke-width: 1;
+}
+
+.moshtaryar-grid--base {
+	stroke: var(--my-border);
+}
+
+.moshtaryar-grid-label {
+	fill: var(--my-faint);
+	font-size: 10px;
+}
+
+.moshtaryar-month-label {
+	fill: var(--my-muted);
+	font-size: 10.5px;
+}
+
+/* رشد ملایم میله‌ها از پایین در ورود */
+.moshtaryar-bar {
+	fill: var(--my-primary);
+	transition: transform 0.65s cubic-bezier(0.22, 0.7, 0.3, 1), fill 0.15s ease;
+	transform-box: fill-box;
+	transform-origin: 50% 100%;
+}
+
+.moshtaryar-bar.is-hidden {
+	transform: scaleY(0);
+}
+
+.moshtaryar-slot__hit {
+	cursor: default;
+}
+
+.moshtaryar-slot:hover .moshtaryar-bar {
+	fill: var(--my-primary-dark);
+}
+
+/* ---------- تولتیپ ---------- */
+
+.moshtaryar-tooltip {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 20;
+	pointer-events: none;
+	background: #1d2327;
+	color: #fff;
+	font-size: 12px;
+	line-height: 1.7;
+	padding: 6px 12px;
+	border-radius: 4px;
+	white-space: nowrap;
+	opacity: 0;
+	transition: opacity 0.15s ease;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ---------- حالت خالی ---------- */
+
+.moshtaryar-empty {
+	margin-top: 20px;
+	background: var(--my-surface);
+	border: 1px dashed var(--my-border);
+	border-radius: 6px;
+	padding: 48px 24px;
+	text-align: center;
+}
+
+.moshtaryar-empty__icon {
+	color: var(--my-faint);
+	display: inline-block;
+	margin-bottom: 12px;
+}
+
+.moshtaryar-empty__icon svg {
+	width: 34px;
+	height: 34px;
+}
+
+.moshtaryar-empty__title {
+	font-size: 15px;
+	font-weight: 700;
+	margin: 0 0 6px;
+}
+
+.moshtaryar-empty__text {
+	color: var(--my-muted);
+	font-size: 12.5px;
+	margin: 0;
+}
+
+/* ---------- جدول مشتریان ---------- */
+
+.moshtaryar-toolbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	flex-wrap: wrap;
+	margin-top: 14px;
+}
+
+.moshtaryar-filters {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+
+.moshtaryar-search {
+	min-width: 230px;
+}
+
+.moshtaryar-clear {
+	color: var(--my-muted);
+	text-decoration: none;
+	font-size: 12px;
+}
+
+.moshtaryar-clear:hover {
+	color: var(--my-primary);
+}
+
+.moshtaryar-result-count {
+	color: var(--my-muted);
+	font-size: 12px;
+	margin: 12px 0 6px;
+}
+
+.moshtaryar-table-scroll {
+	overflow-x: auto;
+	background: var(--my-surface);
+	border: 1px solid var(--my-border);
+	border-radius: 6px;
+}
+
+.moshtaryar-table {
+	border: none !important;
+	box-shadow: none !important;
+	margin: 0 !important;
+}
+
+.moshtaryar-table thead th {
+	font-weight: 700;
+	font-size: 12.5px;
+	padding: 10px 12px;
+	white-space: nowrap;
+}
+
+.moshtaryar-table tbody td {
+	padding: 9px 12px;
+	font-size: 12.5px;
+	vertical-align: middle;
+}
+
+.moshtaryar-table thead a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.moshtaryar-table thead a:hover {
+	color: var(--my-primary);
+}
+
+.moshtaryar-sort {
+	color: var(--my-primary);
+	font-size: 11px;
+}
+
+.moshtaryar-cell-name {
+	font-weight: 600;
+}
+
+.moshtaryar-cell-name a {
+	text-decoration: none;
+}
+
+.moshtaryar-cell-name a:hover {
+	color: var(--my-primary);
+}
+
+.moshtaryar-guest {
+	color: var(--my-faint);
+	font-weight: 400;
+	font-size: 11.5px;
+}
+
+.moshtaryar-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 7px;
+	padding: 2px 10px;
+	background: var(--my-wash);
+	border: 1px solid var(--my-border-light);
+	border-radius: 999px;
+	font-size: 12px;
+	white-space: nowrap;
+}
+
+/* ---------- صفحه‌بندی ---------- */
+
+.moshtaryar-pagination {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-top: 14px;
+}
+
+.moshtaryar-pagination__info {
+	color: var(--my-muted);
+	font-size: 12px;
+	margin-inline-end: 6px;
+}
+
+/* ---------- انیمیشن ملایم ورود ---------- */
+
+@keyframes moshtaryar-fade-up {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+.moshtaryar-kpi,
+.moshtaryar-card,
+.moshtaryar-empty {
+	animation: moshtaryar-fade-up 0.45s ease-out both;
+}
+
+.moshtaryar-kpi:nth-child(2) {
+	animation-delay: 0.05s;
+}
+
+.moshtaryar-kpi:nth-child(3) {
+	animation-delay: 0.1s;
+}
+
+.moshtaryar-kpi:nth-child(4) {
+	animation-delay: 0.15s;
+}
+
+.moshtaryar-card--bars {
+	animation-delay: 0.08s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.moshtaryar-kpi,
+	.moshtaryar-card,
+	.moshtaryar-empty {
+		animation: none;
+	}
+
+	.moshtaryar-donut-svg circle,
+	.moshtaryar-bar,
+	.moshtaryar-tooltip {
+		transition: none;
+	}
+}
+
+/* ---------- واکنش‌گرایی ---------- */
+
+@media (max-width: 1100px) {
+	.moshtaryar-kpis {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.moshtaryar-charts {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 620px) {
+	.moshtaryar-kpis {
+		grid-template-columns: 1fr;
+	}
+
+	.moshtaryar-page-head {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.moshtaryar-search {
+		min-width: 0;
+		width: 100%;
+	}
+}

@@ -1,0 +1,98 @@
+/* نقشه حرارتی ایران — مشتریار */
+
+.moshtaryar-map-wrap {
+	position: relative;
+	background: #fff;
+	border: 1px solid #e2e4e7;
+	border-radius: 8px;
+	padding: 24px;
+	overflow: hidden;
+}
+
+.moshtaryar-map-toolbar {
+	display: flex;
+	gap: 8px;
+	margin-bottom: 16px;
+}
+
+.moshtaryar-map-toolbar button {
+	border: 1px solid #dcdcde;
+	background: #f6f7f7;
+	border-radius: 4px;
+	padding: 4px 14px;
+	cursor: pointer;
+	font-size: 13px;
+}
+
+.moshtaryar-map-toolbar button.is-active {
+	background: #1d2327;
+	color: #fff;
+	border-color: #1d2327;
+}
+
+#moshtaryar-iran-svg {
+	width: 100%;
+	height: auto;
+	display: block;
+	direction: ltr;
+}
+
+.moshtaryar-iran-province {
+	stroke: #fff;
+	stroke-width: 0.6;
+	cursor: pointer;
+	transition: fill .2s ease, opacity .15s ease;
+}
+
+.moshtaryar-iran-province:hover,
+.moshtaryar-iran-province:focus {
+	opacity: .75;
+	outline: none;
+}
+
+#moshtaryar-map-tip {
+	display: none;
+	position: absolute;
+	pointer-events: none;
+	background: #1d2327;
+	color: #fff;
+	font-size: 12px;
+	line-height: 1.6;
+	padding: 4px 10px;
+	border-radius: 4px;
+	z-index: 20;
+	white-space: nowrap;
+}
+
+#moshtaryar-map-legend {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	margin-top: 12px;
+}
+
+.moshtaryar-legend-chip {
+	width: 26px;
+	height: 12px;
+	border-radius: 2px;
+	display: inline-block;
+}
+
+.moshtaryar-map-table {
+	margin-top: 20px;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.moshtaryar-map-table th,
+.moshtaryar-map-table td {
+	text-align: right;
+	padding: 8px 12px;
+	border-bottom: 1px solid #f0f0f1;
+	font-size: 13px;
+}
+
+.moshtaryar-map-table th {
+	background: #f6f7f7;
+	font-weight: 600;
+}
